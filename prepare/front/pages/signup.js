@@ -59,7 +59,7 @@ const Signup = () => {
         <div>
           <label htmlFor="user-id">아이디</label>
           <br />
-          <Input name="user-id" value={id} required onChange={onChangeId} />
+          <Input name="user-id" type="email" value={id} required onChange={onChangeId} />
         </div>
         <div>
           <label htmlFor="user-nick">닉네임</label>
