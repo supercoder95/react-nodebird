@@ -2,9 +2,10 @@ import { Button, Form, Input } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ADD_COMMENT_REQUEST } from '../reducers/post';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CommentForm = ({ post }) => {
+  const dispatch = useDispatch();
   const id = useSelector((state) => state.user.me?.id);
   const { addCommentDone } = useSelector((state) => state.post);
   const [commentText, onChangeCommentText, setCommentText] = useState('');
@@ -17,15 +18,15 @@ const CommentForm = ({ post }) => {
 
   const onSubmitComment = useCallback(() => {
     console.log(commentText);
-    dispatchEvent({
+    dispatch({
       type: ADD_COMMENT_REQUEST,
       data: { content: commentText, postId: post.id, userId: id }
     })
   }, [commentText, id]);
   
-  const onChangeCommentText = useCallback((e) => {
-    setCommentText(e.target.value);
-  }, []);
+  // const onChangeCommentText = useCallback((e) => {
+  //   setCommentText(e.target.value);
+  // }, []);
 
   return (
     <Form onFinish={onSubmitComment}>
