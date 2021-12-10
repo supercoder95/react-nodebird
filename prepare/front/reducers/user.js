@@ -8,6 +8,9 @@ export const initialState = {
   signUpLoading: false, // try to signUp
   signUpDone: false,
   signUpFailure: null,
+  changeNicknameLoading: false,
+  changeNicknameDone: false,
+  changeNicknameError: null,
   me: null,
   signUpData: {},
   loginData: {},
@@ -24,6 +27,10 @@ export const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+
+export const CHANGE_NICKNAME_REQUEST = 'CHANGE_NICKNAME_REQUEST';
+export const CHANGE_NICKNAME_SUCCESS = 'CHANGE_NICKNAME_SUCCESS';
+export const CHANGE_NICKNAME_FAILURE = 'CHANGE_NICKNAME_FAILURE';
 
 export const FOLLOW_UP_REQUEST = 'FOLLOW_UP_REQUEST';
 export const FOLLOW_UP_SUCCESS = 'FOLLOW_UP_SUCCESS';
